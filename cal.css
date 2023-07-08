@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+body{
+    font-family: 'Kanit', sans-serif;
+    transition: .2s;
+}
+.darkmode{
+    padding: 20px;
+}
+.toggle {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    height: 40px;
+    border-radius: 50px;
+    transition: .2s;
+}
+
+.toggle i {
+    width: 40%;
+    line-height: 40px;
+    text-align: center;
+    font-size: 25px;
+    z-index: 1;
+}
+
+.toggle .ball {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: 5.5px;
+    border-radius: 50%;
+    transition: .3s ease-out;
+}
+
+.darkmode input {
+    display: none;
+}
+
+/*
+    -- Light Mode --
+*/
+
+.light {
+    background: #eacda3;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #d6ae7b, #eacda3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.light .toggle {
+    background: linear-gradient(145deg, #e1e1e1, #fff);
+    box-shadow: 2px 3px 5px #ddd7d7,
+                2px 2px 4px #8c87873f;
+                
+}
+
+.light .toggle .bxs-sun {
+    color: #fafafa;
+}
+
+.light .toggle .bx-moon {
+    color: #151d2a;
+    
+}
+
+.light .toggle .ball {
+    background: #151d2a;
+}
+
+/*
+    -- Dark Mode --
+*/
+
+.dark {
+    background: #2b5876;  
+    background: -webkit-linear-gradient(to right, #4e4376, #2b5876);
+    background: linear-gradient(to right, #4e4376, #2b5876); 
+
+    /* background: #5C258D;
+    background: -webkit-linear-gradient(to right, #8ea6ae, #969696);  
+    background: linear-gradient(to right, #5d7777, #19135a); */
+}
+
+.dark .toggle {
+    background: #151d2a;
+    box-shadow: 3px 3px 3px #2d323b,
+                -3px -3px 3px #1c2739;
+}
+
+.dark .toggle .bx-sun {
+    color: #fafafa;
+}
+
+.dark .toggle .bxs-moon {
+    color: #151d2a;
+}
+
+.dark .toggle .ball {
+    background: #fafafa;
+    transform: translateX(60px);
+}
+section{
+    width: 100%;
+    padding: 30px 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.main form{
+    padding-top: 25px;
+}
+#display {
+    text-align: right;
+    height: 70px;
+    padding: 16px 8px;
+    font-size: 40px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.main{
+    width: 450px;
+    height: 90vh;
+    background-color: #a9835d;
+    /* background-color: rgb(44, 67, 82); */
+    border-radius: 25px;
+    border-color: black 2px 2px 2px;
+    box-shadow: rgba(0, 0, 0, 0.784) 5px 5px 5px;
+    position: relative;
+}
+form{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 15px;
+}
+
+.displays{
+    width: 100%;
+    height: 100px;
+    border-radius: 15px;
+    background-color: rgb(247, 247, 247);
+    padding: 10px;
+    text-align: right;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.calculate{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+.btn-num{
+    padding: 0;
+    width: 85px;;
+    height: 70px;
+    background-color: rgba(239, 239, 239, 0.789);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.equals{
+    padding: 0;
+    width: 85px;;
+    height: 70px;
+    background-color: rgba(254, 165, 0);
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button{
+    width: 100%;
+    height: 100%;
+    font-size: 40px;
+    line-height: 70px;
+    text-align: center;
+    cursor: pointer;
+    margin: 0;
+}
+
+.equal{
+    width: 85px;
+    height: 70px;
+    color: #ffffff;
+    background-color: rgb(106, 137, 147);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+@media screen and (max-width: 767px) {
+    .main{
+        height: 77vh;
+    }
+    .main{
+        height: 90vh;
+    }
+    .displays{
+        height: 70px;
+    }
+    .equals, .btn-num{
+        height: 70px;
+        width: 75px;
+    }
+    
+    .equal{
+        height: 70px;
+        width: 75px;
+    }
+    #display ,.button {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    #display ,.button {
+        font-size: 24px;
+    }
+    .displays{
+        height: 60px;
+    }
+    .equals, .btn-num{
+        height: 60px;
+        width: 65px;
+    }
+    
+    .equal{
+        height: 60px;
+        width: 65px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    body{
+        padding: 20px;
+    }
+    .main{
+        height: 60vh;
+    }
+    .main form{
+        padding-top: 60px;
+    }
+    .displays{
+        height: 60px;
+    }
+    .equals, .equal, .btn-num{
+        height: 40px;
+        width: 45px;
+    }
+    .button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #display ,.button {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    body{
+        padding: 20px;
+    }
+    .darkmode{
+        padding: 10px 15px;
+    }
+    .toggle{
+        padding-right: 5px;
+        height: 35px;
+    }
+    .toggle i {
+        width: 35%;
+        margin-left: 2px;
+        line-height: 35px;
+        font-size: 20px;
+    }
+    .toggle .ball{
+        height: 26px;
+        width: 26px;
+        margin: 4px 7px;
+    }
+    .main form{
+        padding-top: 0;
+        bottom: -110px;
+    }
+    .main{
+        height: 50vh;
+        width: 90%;
+    }
+    .calculate{
+        padding: 5px;
+    }
+    .displays{
+        height: 60px;
+        margin-bottom: 10px;
+    }
+    .equals, .equal, .btn-num{
+        height: 30px;
+        width: 35px;
+        
+    }
+    
+    #display ,.button {
+        font-size: 14px;
+    }
+    #display{
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .toggle i {
+        margin-left: 3px;
+    }
+    .main form{
+        padding-top: 10px;
+    }
+    .main{
+        height: 85vh;
+    }
+    .displays{
+        height:55px;
+    }
+    #display{
+        height: 20px;
+    }
+    .equals, .btn-num{
+        height: 45px;
+        width: 50px;
+    }
+    .equal{
+        height: 45px;
+        width: 105px;
+    }
+}
